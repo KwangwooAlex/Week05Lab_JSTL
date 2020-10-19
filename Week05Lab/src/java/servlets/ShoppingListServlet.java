@@ -60,10 +60,10 @@ public class ShoppingListServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String action = (String) request.getParameter("action");
         
-        System.out.println(action);
+       
         
         if(action.equals("registerName")) {
-            
+            //             System.out.println(action);
             String username = (String) request.getParameter("name");
             ArrayList<String> itemsList = new ArrayList<>();
             
@@ -76,7 +76,7 @@ public class ShoppingListServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request,response); 
         }
         else if(action.equals("delete")) {
-            
+            //             System.out.println(action);
             String item = (String) request.getParameter("item");
             ArrayList<String> listUpdated = (ArrayList<String>) session.getAttribute("itemList");
             
@@ -96,7 +96,7 @@ public class ShoppingListServlet extends HttpServlet {
           getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request,response); 
         }   
         else if(action.equals("add")) {
-            
+            //             System.out.println(action);
             String item = (String) request.getParameter("addItem");
             ArrayList<String> listUpdated;
             
